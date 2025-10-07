@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --default-font-family: var(--font-playfair-display), var(--font-serif), serif;
+  --font-display: var(--font-bebas-neue), var(--font-sans), sans-serif;
+}
+
+@layer base {
+  html {
+    @apply antialiased bg-zinc-950 text-zinc-50;
+  }
+}
