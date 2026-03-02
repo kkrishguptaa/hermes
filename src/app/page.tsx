@@ -4,8 +4,8 @@ export default function Home() {
   const socialLinks = [
     { href: "https://poems.krishg.com", label: "Poems" },
     { href: "https://blog.krishg.com", label: "Blog" },
-    { href: "https://instagram.com/kkrishguptaa", label: "Instagram" },
-    { href: "https://x.com/kkrishguptaa", label: "Twitter" },
+    { href: "https://instagram.com/krishstrucklife", label: "Instagram" },
+    { href: "https://x.com/krishstrucktech", label: "Twitter" },
     { href: "https://linkedin.com/in/kkrishguptaa", label: "LinkedIn" },
     { href: "https://github.com/kkrishguptaa", label: "GitHub" },
     { href: "mailto:m.krishggupta@icloud.com", label: "Email" },
