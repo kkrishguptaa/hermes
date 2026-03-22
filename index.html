@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="A lightweight business-card site for connecting with Krish Gupta."
@@ -14,6 +11,216 @@
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <main id="app"></main>
+    <main class="stage">
+      <section class="card-frame" aria-label="Business card">
+        <p class="flip-hint">tap to turn</p>
+        <div
+          class="card-shell"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+          aria-label="Flip business card to view contact details"
+        >
+          <div class="card-inner">
+            <section class="card-face card-face-front" aria-hidden="false">
+              <div class="front-mark" aria-hidden="true">
+                <svg
+                  class="monogram"
+                  viewBox="0 0 600 600"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M560.967 219.477C544.584 126.296 483.135 53.6859 410.536 23.4603C414.267 20.8789 418.136 18.209 422.162 15.4316L422.332 15.3142C425.833 12.8989 429.452 10.4017 433.198 7.81216L444.5 0H560.967V219.477Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M600 355.673C600 340.816 599.249 322.656 597.748 306.973L389.821 307.798V313.576C468.638 316.053 561.717 328.434 561.717 428.311C561.717 510.692 499.132 561.611 431.324 571.724C437.028 577.224 442.952 581.601 449.303 584.939C540.05 551.537 599.42 465.449 600 355.673Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M427.676 0C424.213 2.39352 420.858 4.70836 417.602 6.95444L417.572 6.97594C352.573 51.8224 327.296 69.2627 271.859 138.456C256.28 157.33 242.259 175.345 228.238 193.36L355.987 460.164L356.568 461.388C380.602 512.025 398.353 549.424 419.58 573.062C425.213 579.335 431.09 584.638 437.394 588.962C442.414 592.406 447.705 595.229 453.358 597.426V600H306.134C307.403 598.292 308.544 596.499 309.562 594.633C310.353 593.183 311.07 591.689 311.714 590.155C314.826 582.75 316.26 574.415 316.26 565.684C316.26 561.046 315.873 556.17 315.088 551.024C312.533 534.279 305.77 514.672 294.449 491.048L181.499 255.987C178.782 260.027 176.117 264.073 173.507 268.129C171.996 270.478 170.503 272.83 169.03 275.186C167.631 277.422 166.25 279.662 164.887 281.906C164.453 277.546 164.096 273.187 163.817 268.834C166.965 263.965 170.197 259.053 173.507 254.077C198.621 216.334 228.264 179.073 260.175 139.314C307.692 80.9777 333.397 41.5149 333.397 14.0624C333.397 11.9155 333.298 9.98776 333.134 8.20098C332.859 5.19281 332.402 2.58361 331.934 0H427.676Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M322.802 0L323.058 1.40548C323.513 3.91446 323.917 6.1603 324.169 8.6127C309.794 9.65683 296.112 12.5226 283.209 17.0346C203.949 44.7512 154.12 134.588 154.12 245.891C154.12 257.654 154.698 269.517 155.833 281.397C156.243 285.699 156.727 290.004 157.283 294.306C168.571 381.699 209.539 468.387 271.601 521.459C275.392 524.701 279.262 527.817 283.209 530.801C290.201 536.087 297.434 540.956 304.897 545.365C306.534 552.847 307.305 559.575 307.305 565.684C307.305 576.188 304.92 585.349 300.12 592.47C294.396 591.042 288.757 589.421 283.209 587.614C202.965 561.482 141.423 496.55 110.15 417.38C108.075 412.126 106.132 406.809 104.327 401.436C104.194 401.04 104.061 400.643 103.93 400.246C102.719 396.596 101.571 392.921 100.487 389.223C100.377 388.851 100.269 388.478 100.161 388.105C91.9088 359.574 87.4666 329.687 87.3173 299.469L87.317 299.398C87.3148 298.929 87.3136 298.46 87.3134 297.992L87.3134 297.893C87.3134 264.953 91.9682 233.709 100.487 204.69C127.846 111.485 195.063 41.2337 275.926 11.4476C289.416 6.47837 303.286 2.63541 317.414 0H322.802Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M132.891 0C104.353 47.8496 100.487 93.249 100.487 165.051V176.47C86.3164 213.265 78.3582 254.125 78.3582 297.893C78.3582 339.163 86.1157 379.867 100.487 417.559V417.572L100.488 417.563C102.62 423.156 104.898 428.682 107.318 434.134C104.884 450.994 103.602 468.488 103.602 486.759C103.602 495.337 103.602 503.917 104.381 513.353C105.939 545.095 116.066 571.69 133.203 600H0C28.8217 551.958 32.7166 506.49 32.7166 434.427V165.051C32.7166 93.249 28.8499 47.8496 0.312096 0H132.891Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="front-copy">
+                <h1>Krish Gupta</h1>
+              </div>
+            </section>
+
+            <section class="card-face card-face-back" aria-hidden="true">
+              <div class="back-copy">
+                <h2>Krish Gupta</h2>
+                <p class="back-tagline">poet, economist, engineer</p>
+              </div>
+
+              <nav aria-label="Contact links">
+                <ul class="contact-list">
+                  <li>
+                    <a
+                      class="contact-link"
+                      href="https://krishg.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="contact-label">Portfolio</span>
+                      <svg
+                        class="contact-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M15 3h6v6M10 14 21 3M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="contact-link"
+                      href="https://github.com/kkrishguptaa"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="contact-label">GitHub</span>
+                      <svg
+                        class="contact-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M9 19c-4 1.2-4-2-5.5-2.5M14.5 21v-3.1a2.6 2.6 0 0 0-.8-2c2.7-.3 5.5-1.3 5.5-6A4.7 4.7 0 0 0 18 6.6 4.3 4.3 0 0 0 17.9 3S16.9 2.7 14.5 4.3a14.2 14.2 0 0 0-5 0C7.1 2.7 6.1 3 6.1 3A4.3 4.3 0 0 0 6 6.6a4.7 4.7 0 0 0-1.2 3.3c0 4.7 2.8 5.7 5.5 6a2.6 2.6 0 0 0-.8 2V21"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="contact-link"
+                      href="https://instagram.com/krishstrucklife"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="contact-label">Instagram</span>
+                      <svg
+                        class="contact-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <rect x="3" y="3" width="18" height="18" rx="4" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="contact-link"
+                      href="https://linkedin.com/in/kkrishguptaa"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="contact-label">LinkedIn</span>
+                      <svg
+                        class="contact-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <rect x="3" y="3" width="18" height="18" rx="3" />
+                        <path d="M8 10v6M8 7.5v.01M12 16v-3.2c0-1.1.9-2 2-2s2 .9 2 2V16" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="contact-link"
+                      href="https://x.com/krishstrucktech"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="contact-label">X</span>
+                      <svg
+                        class="contact-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M4 4 20 20" />
+                        <path d="m20 4-6.4 7.2L8.8 20H4l6.9-7.8L4 4h4.8l4.8 5.7L19.1 4H20Z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="contact-link"
+                      href="mailto:krish@krishg.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="contact-label">Email</span>
+                      <svg
+                        class="contact-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <path d="m4 7 8 6 8-6" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="contact-link"
+                      href="https://poems.krishg.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="contact-label">Poetry</span>
+                      <svg
+                        class="contact-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 4h9l3 3v13H6z" />
+                        <path d="M15 4v4h4" />
+                        <path d="M9 11c1-.9 2.1-.9 3.1 0 .9.8 1.9.8 2.9 0" />
+                        <path d="M9 15c1-.9 2.1-.9 3.1 0 .9.8 1.9.8 2.9 0" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="contact-link"
+                      href="https://blog.krishg.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="contact-label">Blog</span>
+                      <svg
+                        class="contact-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M7 4h7l3 3v13H7z" />
+                        <path d="M14 4v4h4" />
+                        <path d="M10 12h4M10 16h4" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
-  </html>
+</html>
