@@ -1,0 +1,320 @@
+:root {
+  --paper-bg: #fdfaec;
+  --ink: #001011;
+  --card-bg: #fbf7ec;
+  --card-border: rgba(0, 16, 17, 0.13);
+  --card-shadow: 0 5px 16px rgba(0, 16, 17, 0.055);
+  --card-shadow-hover: 0 7px 18px rgba(0, 16, 17, 0.06);
+
+  color-scheme: light;
+  font-family:
+    "Iowan Old Style", "Palatino Linotype", "URW Palladio L", "Book Antiqua",
+    Georgia, serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background: var(--paper-bg);
+  color: var(--ink);
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--paper-bg);
+  color: var(--ink);
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a { color: inherit; }
+
+.stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.card-frame {
+  width: min(88vw, 540px);
+  display: grid;
+  gap: 0.45rem;
+  align-items: stretch;
+}
+
+.card-shell {
+  width: 100%;
+  aspect-ratio: 1.75 / 1;
+  position: relative;
+  cursor: pointer;
+  perspective: 1800px;
+  outline: none;
+}
+
+.card-shell:focus-visible {
+  border-radius: 0;
+  box-shadow:
+    0 0 0 3px rgba(0, 16, 17, 0.12),
+    0 6px 18px rgba(0, 16, 17, 0.06);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.card-shell.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.35rem, 4vw, 2rem);
+  border: 1px solid var(--card-border);
+  border-radius: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.04)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 16, 17, 0.01),
+      rgba(0, 16, 17, 0) 12%,
+      rgba(0, 16, 17, 0) 88%,
+      rgba(0, 16, 17, 0.01)
+    ),
+    var(--card-bg);
+  box-shadow: var(--card-shadow);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    inset 0 0 18px rgba(255, 255, 255, 0.04);
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
+  gap: 1rem;
+}
+
+.card-face-front {
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: left;
+}
+
+.front-mark {
+  align-self: flex-end;
+  width: clamp(4.5rem, 12vw, 6.75rem);
+  color: rgba(0, 16, 17, 0.78);
+}
+
+.monogram {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.front-copy {
+  align-self: flex-start;
+  width: auto;
+  max-width: 70%;
+}
+
+.front-copy h1,
+.back-copy h2 {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.front-copy h1 {
+  font-size: clamp(2.8rem, 7.2vw, 4.6rem);
+  line-height: 0.92;
+}
+
+.back-copy {
+  display: grid;
+  gap: 0.3rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0, 16, 17, 0.12);
+}
+
+.back-copy h2 {
+  font-size: clamp(1.45rem, 4vw, 2rem);
+}
+
+.back-tagline {
+  margin: 0;
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: rgba(0, 16, 17, 0.72);
+}
+
+.contact-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  text-decoration: none;
+  font-family:
+    "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: rgba(0, 16, 17, 0.88);
+  border-bottom: 1px solid transparent;
+  padding: 0.1rem 0;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.contact-label {
+  min-width: 0;
+}
+
+.contact-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(0, 16, 17, 0.28);
+  color: #001011;
+  outline: none;
+}
+
+.flip-hint {
+  margin: 0;
+  justify-self: end;
+  font-family:
+    "SFMono-Regular", "SF Mono", "Cascadia Code", "JetBrains Mono",
+    "Roboto Mono", Consolas, "Liberation Mono", monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: rgba(0, 16, 17, 0.64);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-shell:hover .card-face {
+    box-shadow: var(--card-shadow-hover);
+  }
+}
+
+@media (max-width: 640px) {
+  .stage {
+    padding: 1.25rem;
+  }
+
+  .card-frame {
+    width: min(92vw, 540px);
+  }
+
+  .card-shell {
+    aspect-ratio: 1.55 / 1;
+  }
+
+  .card-face {
+    padding: 1.15rem;
+  }
+
+  .card-shell:focus-visible {
+    border-radius: 0;
+  }
+
+  .flip-hint {
+    font-size: 0.78rem;
+  }
+
+  .contact-list {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .back-copy {
+    padding-bottom: 0.65rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-inner,
+  .contact-link {
+    transition: none;
+  }
+
+  .card-shell.is-flipped .card-inner {
+    transform: none;
+  }
+
+  .card-face-front,
+  .card-face-back {
+    transform: none;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+
+  .card-face-front[aria-hidden="true"],
+  .card-face-back[aria-hidden="true"] {
+    display: none;
+  }
+}
