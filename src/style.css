@@ -1,0 +1,273 @@
+:root {
+  color-scheme: light;
+  font-family:
+    "Iowan Old Style", "Palatino Linotype", "URW Palladio L", "Book Antiqua",
+    Georgia, serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background: #fdfaec;
+  color: #001011;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #fdfaec;
+  color: #001011;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.card-shell {
+  width: min(88vw, 540px);
+  aspect-ratio: 1.75 / 1;
+  position: relative;
+  cursor: pointer;
+  perspective: 1800px;
+  outline: none;
+}
+
+.card-shell:focus-visible {
+  border-radius: 0.85rem;
+  box-shadow:
+    0 0 0 4px rgba(0, 16, 17, 0.14),
+    0 16px 36px rgba(0, 16, 17, 0.12);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.card-shell.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.35rem, 4vw, 2rem);
+  border: 1px solid rgba(0, 16, 17, 0.18);
+  border-radius: 0.85rem;
+  background:
+    linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 255, 255, 0.42)
+    ),
+    #f8f3e3;
+  box-shadow:
+    0 14px 32px rgba(0, 16, 17, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.34);
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 16, 17, 0.62);
+}
+
+.front-copy {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 27rem;
+}
+
+.front-copy h1,
+.back-copy h2 {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.front-copy h1 {
+  font-size: clamp(2.6rem, 8vw, 4.9rem);
+}
+
+.front-copy p {
+  margin: 0;
+  font-size: clamp(1.15rem, 3vw, 2rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: rgba(0, 16, 17, 0.82);
+}
+
+.card-face-back {
+  gap: 1.5rem;
+}
+
+.back-copy {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.back-copy h2 {
+  font-size: clamp(1.9rem, 5vw, 3rem);
+}
+
+.contact-list {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 16, 17, 0.14);
+  background: rgba(255, 255, 255, 0.34);
+  text-decoration: none;
+  font-family:
+    "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.contact-list a::after {
+  content: "↗";
+  font-size: 0.94rem;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(0, 16, 17, 0.28);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 10px 20px rgba(0, 16, 17, 0.08);
+  outline: none;
+}
+
+.flip-hint {
+  margin: 0;
+  font-family:
+    "SFMono-Regular", "SF Mono", "Cascadia Code", "JetBrains Mono",
+    "Roboto Mono", Consolas, "Liberation Mono", monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: rgba(0, 16, 17, 0.62);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-shell:hover .card-face {
+    box-shadow:
+      0 18px 38px rgba(0, 16, 17, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  }
+}
+
+@media (max-width: 640px) {
+  .stage {
+    padding: 1.25rem;
+  }
+
+  .card-shell {
+    width: min(92vw, 540px);
+    aspect-ratio: 1.55 / 1;
+  }
+
+  .card-face {
+    border-radius: 0.75rem;
+  }
+
+  .contact-list a {
+    padding: 0.82rem 0.95rem;
+  }
+
+  .flip-hint {
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-inner,
+  .contact-list a {
+    transition: none;
+  }
+
+  .card-shell.is-flipped .card-inner {
+    transform: none;
+  }
+
+  .card-face-front,
+  .card-face-back {
+    transform: none;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+
+  .card-face-front[aria-hidden="true"],
+  .card-face-back[aria-hidden="true"] {
+    display: none;
+  }
+}
