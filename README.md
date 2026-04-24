@@ -1,12 +1,12 @@
-# Hermes
+# ConnectCard
 
 Digital Business Card built for Connection 🪬
 
-[![A screenshot of the Hermes Website](https://github.com/kkrishguptaa/hermes/raw/main/.github/screenshot.png)](https://connect.krishg.com)
+[![A screenshot of the ConnectCard Website](https://github.com/kkrishguptaa/ConnectCard/raw/main/.github/screenshot.png)](https://connect.krishg.com)
 
 ## 👋 Introduction
 
-Hermes is a minimal digital business card. It is not a portfolio, a blog, or a personal website. The goal is a single, focused surface that helps people connect with you quickly — sparse on the front, dense with contact routes on the back, and nothing else in the way.
+ConnectCard is a minimal digital business card. It is not a portfolio, a blog, or a personal website. The goal is a single, focused surface that helps people connect with you quickly — sparse on the front, dense with contact routes on the back, and nothing else in the way.
 
 The card flips on click, tap, or keyboard to reveal eight ways to reach you: Portfolio, GitHub, Instagram, LinkedIn, X, Email, Poetry, and Blog.
 
@@ -40,20 +40,20 @@ The palette is intentionally minimal:
 
 This website is hosted on Vercel. If you want to deploy it yourself, you can use this handy button:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkkrishguptaa%2Fhermes&demo-title=Hermes&demo-description=Digital%20Business%20Card%20built%20for%20Connection&demo-url=https%3A%2F%2Fconnect.krishg.com&demo-image=https%3A%2F%2Fgithub.com%2Fkkrishguptaa%2Fhermes%2Fraw%2Fmain%2F.github%2Fscreenshot.png)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkkrishguptaa%2FConnectCard&demo-title=ConnectCard&demo-description=Digital%20Business%20Card%20built%20for%20Connection&demo-url=https%3A%2F%2Fconnect.krishg.com&demo-image=https%3A%2F%2Fgithub.com%2Fkkrishguptaa%2FConnectCard%2Fraw%2Fmain%2F.github%2Fscreenshot.png)
 
 ## ✌️ Running Locally
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/kkrishguptaa/hermes.git
+   git clone https://github.com/kkrishguptaa/ConnectCard.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd hermes
+   cd ConnectCard
    ```
 
 3. Install dependencies:
